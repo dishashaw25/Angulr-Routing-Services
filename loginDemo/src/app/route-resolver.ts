@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve} from '@angular/router';
+import { Resolve, ActivatedRouteSnapshot} from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RouteResolver implements Resolve<Observable<any>>{
   constructor(private http: HttpClient) { }
+
   resolve() {
-    return this.http.get("./assets/loginData.jsn");
+    return this.http.get("./assets/loginData.json");
   }
 }

@@ -1,6 +1,7 @@
 import { DataServiceService } from './../data-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-show-json',
@@ -9,10 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class ShowJSONComponent implements OnInit {
 
-  constructor(private dataService: DataServiceService) { }
-  value: Array<string>;
+  constructor(private route: ActivatedRoute) { }
+  value: any;
   ngOnInit() {
-    this.dataService.getJSON().subscribe(data => this.value = data);
+    //this.dataService.getJSON().subscribe(data => this.value = data);
+    this.value = this.route.snapshot.data;
     console.log(this.value);
   }
 

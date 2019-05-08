@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DataServiceService } from './data-service.service';
 import { ShowJSONComponent } from './show-json/show-json.component';
+import { RouteResolver } from './route-resolver';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ShowJSONComponent } from './show-json/show-json.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [RouteResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
